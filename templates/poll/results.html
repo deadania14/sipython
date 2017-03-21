@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Terserah Lu poll </title>
+    <title>Result Vote </title>
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
 
 </head>
@@ -10,11 +10,11 @@
 <body>
     <div class="container">
         <div class="row">
-            <h1>Welcome to the poll</h1>
-            <p class="lead">this is the app, where you can take a vote a choice you like.</p>
-            {% for tanya in questions %}
-            <p><a href="{% url 'poll:detail_question' tanya.id %}">{{tanya.question_text}}</p>
-            {% endfor %}
+          <h1>Hasil Vote</h1>
+          <p class="lead">{{ question.question_text}}</p>
+          {% for choice in question.choice_set.all %}
+              {{choice.choice_text}} -{{choice.votes}}   <br>
+          {% endfor %}
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

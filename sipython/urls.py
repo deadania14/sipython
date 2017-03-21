@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^poll/', include('poll.urls', namespace='poll'))     #namespace wajib, buat manggil di html
+    url(r'^poll/', include('poll.urls', namespace='poll')),     #namespace wajib, buat manggil di html
 
 ]
 if settings.DEBUG:
