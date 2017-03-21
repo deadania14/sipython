@@ -1,1 +1,24 @@
-hallo
+{% load staticfiles %}
+<html>
+
+<head>
+    <title>Terserah Lu poll </title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Welcome to the poll</h1>
+            <p class="lead">this is the app, where you can take a vote a choice you like.</p>
+            {% for tanya in questions %}
+            <p> {{tanya.question_text}}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+
+</html>
